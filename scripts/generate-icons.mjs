@@ -40,7 +40,10 @@ try {
   await mac.setContent(
     `<style>body{margin:0;display:grid;place-items:center;width:1024px;height:1024px}svg{width:824px;height:824px;display:block}</style>${macSvg}`,
   );
-  await writeFile(new URL("icon-mac.png", destination), await mac.screenshot({ omitBackground: true }));
+  await writeFile(
+    new URL("icon-mac.png", destination),
+    await mac.screenshot({ omitBackground: true }),
+  );
   await mac.close();
 
   // The browser client's home-screen icons. The maskable one fills its square
